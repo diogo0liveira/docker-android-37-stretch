@@ -5,7 +5,7 @@
 [![Provenance: SLSA 1.0](https://img.shields.io/badge/provenance-SLSA%20L1-green?logo=googlecloud)](https://github.com/diogo0liveira/docker-android-37-stretch/actions/workflows/main.yml)
 [![Signed by Cosign](https://img.shields.io/badge/signed%20by-cosign-blue?logo=sigstore)](https://github.com/diogo0liveira/docker-android-37-stretch/actions/workflows/main.yml)
 [![Latest Version](https://img.shields.io/github/v/release/diogo0liveira/docker-android-37-stretch?label=version)](https://github.com/diogo0liveira/docker-android-37-stretch/releases)
-[![Docker Image Size](https://img.shields.io/docker/image-size/diogo0liveira/android-37-stretch?label=size(amd64))](https://hub.docker.com/r/diogo0liveira/android-37-stretch/0.0.0) <!-- x-release-please-version -->
+[![Docker Image Size](https://img.shields.io/docker/image-size/diogo0liveira/android-37-stretch?label=size(amd64))](https://hub.docker.com/r/diogo0liveira/android-37-stretch/1.0.0) <!-- x-release-please-version -->
 
 Imagem Docker para **compilação e publicação com Fastlane** no (Android 17 / Baklava).
 
@@ -61,7 +61,7 @@ android {
 docker run --rm \
   -v "$(pwd):/app" \
   -w /app \
-  diogo0liveira/android-37-stretch:0.0.0 \
+  diogo0liveira/android-37-stretch:1.0.0 \
   ./gradlew assembleRelease --no-daemon
 ```
 <!-- x-release-please-end -->
@@ -71,7 +71,7 @@ docker run --rm \
 podman run --rm \
   -v "$(pwd):/app:z" \
   -w /app \
-  diogo0liveira/android-37-stretch:0.0.0 \
+  diogo0liveira/android-37-stretch:1.0.0 \
   ./gradlew test --no-daemon
 ```
 <!-- x-release-please-end -->
@@ -80,7 +80,7 @@ podman run --rm \
 ## 🛠️ Build Local da Imagem
 <!-- x-release-please-start-version -->
 ```bash
-docker build -t diogo0liveira/android-37-stretch:0.0.0 docker-android-37-stretch
+docker build -t diogo0liveira/android-37-stretch:1.0.0 docker-android-37-stretch
 ```
 <!-- x-release-please-end -->
 
@@ -95,7 +95,7 @@ Você pode validar a imagem oficial (`ghcr.io` ou `docker.io`) executando o segu
 
 <!-- x-release-please-start-version -->
 ```bash
-cosign verify ghcr.io/diogo0liveira/android-37-stretch:0.0.0 \
+cosign verify ghcr.io/diogo0liveira/android-37-stretch:1.0.0 \
   --certificate-identity-regexp https://github.com/diogo0liveira/docker-android-37-stretch \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
