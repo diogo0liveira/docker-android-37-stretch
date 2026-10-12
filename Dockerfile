@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 ARG RUBY_VERSION=3.4.10
 ARG BUNDLER_VERSION=4.0.18
 ARG FASTLANE_VERSION=2.234.0
@@ -7,7 +7,7 @@ ARG MISE_VERSION=v2026.8.2
 ########################################
 # Stage 1: deps - libs de sistema + mise
 ########################################
-FROM diogo0liveira/android-37-slim:1.0.0 AS deps
+FROM diogo0liveira/android-37-slim:1.0.0@sha256:7b93a255b59a728a7a7bb8c7459d2ca786711a7fa0e3c056742022744c74fe08 AS deps
 
 # A imagem base termina como `USER android` (não-root). Este estágio
 # precisa de root para apt-get, para instalar o mise em /opt e para
@@ -82,7 +82,7 @@ RUN gem install bundler -v ${BUNDLER_VERSION} --no-document \
 ########################################
 # Stage 4: final - imagem de runtime
 ########################################
-FROM diogo0liveira/android-37-slim:1.0.0 AS final
+FROM diogo0liveira/android-37-slim:1.0.0@sha256:7b93a255b59a728a7a7bb8c7459d2ca786711a7fa0e3c056742022744c74fe08 AS final
 ARG RUBY_VERSION
 ARG BUNDLER_VERSION
 ARG FASTLANE_VERSION
